@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap'); 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url('images/endless-constellation.svg'); 
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'PT Sans', sans-serif;
+}
+/* <-------------------all container player------------> */
+.player-container{
+    height: 500px;
+    width: 300px;
+    background-color: #a2266b;
+    background-image: linear-gradient(180deg, #a2266b 0%, #5c2e9c 39%, #09014c 77%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 20px 20px 50px rgba(112, 106, 149, 0.5);
+    gap: 5px;
+    overflow: hidden;
+    position: relative;
+}
+.title h1{
+    font-size: 1.8em;
+    font-weight: 700;
+    color: rgba(255, 254, 254, 0.6);
+    padding:20px;
+    
+}
+
+/* <------------------------image container----------------------> */
+.image-contain{
+    position: relative;
+    background: rgba(255, 255, 255, .1);
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 250px;
+    height: 220px;
+    padding: 5px;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, .5);
+    border-left: 1px solid rgba(255, 255, 255, .5);
+    backdrop-filter: blur(5px);
+    
+}
+.container-album{  
+    transform: translateY(100px);
+    transition: .5s;
+    opacity: 0;
+}
+.container-album:hover{ 
+    transform: translateY(0px);
+    opacity: 1;
+}
+:has(> .image-contain :hover) .container-album{
+    transform: translateY(0px);
+    opacity: 1;
+} 
+.image-contain .container-album h2{
+  font-size: 4em;
+  position: absolute;
+  z-index: 1;
+  top:-45px;
+  left: -35px;
+  color: rgba(255, 255, 255, .25);
+  pointer-events: none;
+}
+.image-contain .container-album span{
+    font-size: 1.6em;
+    color: #fff;
+    z-index: 1;
+}
+.container-album ul{
+    list-style: none;
+    font-size: .85em;
+    color: #fff;
+    font-weight: 300;
+    z-index: 1;
+    padding: 5px;
+    line-height: 30px;
+}
+
+.image-contain .eadphone{
+    width: 150px;
+    position: absolute;
+    z-index: -1;
+}
+.image-contain .ecualizer{
+    position: absolute;
+    bottom: 0;
+    opacity: .3;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+:has(> .image-contain :hover) .eadphone{
+    opacity: .4;
+}
+:has(> .image-contain :hover) .ecualizer{
+    opacity: 0;
+}
+
+/* <---------------icons random-repeat-----------------> */
+ .icons-random-repeat button{
+    border-radius: 50%;
+    border-color: rgba(0, 0, 0, .2);
+    background-color:rgba(0, 0, 0, 0);
+    border-style: hidden;
+    padding-top: 18px;
+    
+} 
+.shuffle,.repeat{
+    color: white;
+    font-size: 23px;
+}
+.icons-random-repeat .repeat:hover {
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .5);
+    color:rgba(80, 49, 206,.5);
+    transition: all .5s ease;
+}
+.icons-random-repeat .shuffle:hover {
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .5);
+    color:rgba(80, 49, 206,.5);
+    transition: all .5s ease;
+}
+/* <---------------title image section-----------------> */
+.music-role{
+    width: 250px;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+.music-icon{
+    font-size: 20px;
+}
+.title-image{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    color: #fff;
+    opacity: .4;
+    animation: animated 10s linear 0s infinite normal backwards;
+}
+@keyframes animated {
+    0% {
+      transform: translateX(300px);
+    }
+    100%{
+        transform: translateX(-300px);
+    }
+  }
+/* <---------------bottom Buttons section-----------------> */
+.icons-container{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    
+}
+.icons-container button{
+    border-radius: 50%;
+    border-color: rgba(0, 0, 0, .2);
+    background-color:rgba(0, 0, 0, 0);
+    border-style: hidden;
+}
+.icons-side {
+    color: #fff;
+    font-size: 20px;
+}
+.buttons-play-pause{
+    position: relative;
+}
+#play-button{
+    position: relative;
+    z-index: 1;
+}
+#pause-button{
+    position: relative;
+    display: none;
+}
+.play-ico{
+    color: #fff;
+    font-size: 80px;
+
+}
+.pause-ico{
+    color: #a2266b;
+    font-size: 80px;
+}
+/* <-----------efects hover icons----------> */
+.icons-side:hover {
+    color:rgba(80, 49, 206,.5);
+    transition: all .3s ease;
+}
+.play-ico:hover{
+    color:rgba(80, 49, 206,.3);
+    transition: all .5s ease;
+}
+.pause-ico:hover{
+    transition: all .5s ease;
+    color:rgba(80, 49, 206,.3);
+}
+
+/* <-----gradient color background------> */
+/* background-color: #a2266b;
+background-image: linear-gradient(180deg, #a2266b 0%, #5c2e9c 39%, #09014c 77%); */

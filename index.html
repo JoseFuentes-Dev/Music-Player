@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Music Player</title>
+    <meta name="description" content="Music Player">
+</head>
+<body>
+    <main>
+        <div class="player-container">
+            <section class="title">
+                <h1>Music Player</h1>
+            </section>
+            <section class="image-contain">
+                <img id="ecualizers" class="ecualizer" src="images/ecualizador-gif-5.gif" alt="ecualizer">
+                <img class="eadphone" src="images/bits-image-use.png" alt="bits image">
+                <div class="container-album">
+
+                    <h2>Album</h2>
+                    <span> Electronic Music</span>
+                    <ul>
+                        <li> Faded - Alan-Walker-Faded.mp3</li>
+                        <li> The Time of My Life.mp3</li>
+                        <li>NFT World.mp3</li>
+                        <li>Reto Tokyo.mp3</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="icons-random-repeat">
+                <button><ion-icon class="repeat" name="repeat-outline"></ion-icon></button>
+                <button ><ion-icon class="shuffle" name="shuffle-outline"></ion-icon></button>
+            </section>
+            <div class="music-role">
+
+                <section class="title-image">
+                    <ion-icon class="music-icon" name="musical-notes-outline"></ion-icon><p>Faded - Alan-Walker-Faded.mp3</p>
+                </section>
+            </div>
+            <audio id="player" src="audio/ Alan-Walker-Faded.mp3"></audio>
+            <section class="icons-container">
+                <button><ion-icon class="icons-side" name="play-skip-back-outline"></ion-icon></button>
+                <button><ion-icon class="icons-side" name="play-back-outline"></ion-icon></button>
+                <div class="buttons-play-pause">
+
+                    <button id="play-button" onclick="document.getElementById('player').play()"><ion-icon  onclick="ocultar()"  class="play-ico" name="play-outline"></ion-icon></button> 
+                    <button id="pause-button" onclick="document.getElementById('player').pause()"><ion-icon onclick="mostrar()" class="pause-ico" name="pause-outline"></ion-icon></button> 
+                </div>
+                <button><ion-icon class="icons-side" name="play-forward-outline"></ion-icon></button>
+                <button><ion-icon class="icons-side" name="play-skip-forward-outline"></ion-icon></button>
+            </section>
+           
+        </div>
+    </main>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".image-contain"), {
+		max: 25,
+		speed: 400,
+        glare:true,
+        "max-glare":1,
+	});
+    function ocultar(){
+     document.getElementById('play-button').style.display = 'none';
+     document.getElementById('pause-button').style.display ='block'
+     document.getElementById('ecualizers').style.display = 'block';
+}
+function mostrar(){
+    document.getElementById('pause-button').style.display ='none'
+    document.getElementById('play-button').style.display = 'block';
+    document.getElementById('ecualizers').style.display = 'none';
+}
+    </script>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</html>
